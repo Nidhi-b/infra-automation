@@ -29,7 +29,7 @@ if [[ -r /etc/lsb-release ]]; then
 	sudo unzip -oq /tmp/master.zip -d /tmp
 
         if [[ "$2" = "skip_environment" ]]; then
-           echo "Environmet setup already exits" 
+           echo "Environment setup already exits" 
   
          else       
 	sudo ansible-playbook -i "hosts," -c local /tmp/infra-automation-master/environment-setup.yml --skip-tags "createuser,ansible,aptupdate,python" --extra-vars="server_runs_as=$non_admin_username"
